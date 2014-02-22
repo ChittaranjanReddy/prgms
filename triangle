@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+int main()
+{
+    int x1,y1,x2,y2,x3,y3;
+    int  a,b,c;
+    scanf("%d %d %d %d %d %d",&x1,&y1,&x2,&y2,&x3,&y3);
+    a=sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
+    b=sqrt(((x3-x2)*(x3-x2))+((y3-y2)*(y3-y2)));
+    c=sqrt(((x1-x3)*(x1-x3))+((y1-y3)*(y1-y3)));
+
+    if((a<(b+c))&&(b<(c+a))&&(c<(a+b)))
+    {
+        if((a==b)&&(b==c))
+           {
+            printf("equilateral trianle");
+           }
+        else if(a*a==(b*b+c*c)||b*b==(a*a+c*c)||c*c==(a*a+b*b))
+           {
+               if(a==b||b==c||c==a)
+               printf("right angle isocelous trianle\n");
+               else
+                printf("right angle trianle\n");
+           }
+         else  if(a==b||b==c||c==a)
+            {
+                if(a*a==(b*b+c*c)||b*b==(a*a+c*c)||c*c==(a*a+b*b))
+                    printf("right angle isocelous");
+                else
+                printf("isocelous triangle\n");
+            }
+            else if((a!=b)&&(b!=c))
+                printf("scalan trianle");
+    }
+    else
+        printf("not a trianle");
+}
